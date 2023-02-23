@@ -1,0 +1,20 @@
+package binarySearch;
+
+public class searching {
+	public static String search(IP[] elements, long key) {
+	    int low = 0;                                    // 1
+	    int high = elements.length - 1;                 // 1
+	        
+	    while (low <= high) {                           // 2
+	        int mid = low + (high - low) / 2;           // 3
+	        if (key >= elements[mid].ipFrom && key<=elements[mid].ipTo) {                  // 4
+	        	return elements[mid].toString();// 4
+	        } else if (key > elements[mid].ipTo) {           // 5
+	            low = mid + 1;                          // 5
+	        } else {                                    // 6
+	        	high = mid - 1;                             // 6
+	        }
+	    }
+	    return "Address not found.";                                      // 7
+	}
+}
