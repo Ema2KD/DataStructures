@@ -1,0 +1,23 @@
+package bubble;
+
+import java.io.IOException;
+
+public class main {
+	 public static void main(String[] args) throws IOException{
+		 //IP[] IP_add = new IP[10000];
+		 String path = "C:/Users/User/Downloads/IP-COUNTRY-REGION-CITY-SHUFFLED/IP-COUNTRY-REGION-CITY-SHUFFLED.csv";
+		 IP [] IP_add = IP.readNumbers(path, 10000);
+ 
+		 
+		 for (IP ip: IP_add) {
+			 System.out.println(ip.toString());
+		 }
+		 sorting.sort(IP_add);
+		 for (IP ip: IP_add) {
+			 System.out.println(ip.toString());
+		 }
+		 
+		 IP.writeToFile("C:/Users/User/Downloads/bablf.csv", IP_add );
+	 }
+}
+
